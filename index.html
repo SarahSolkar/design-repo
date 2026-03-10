@@ -491,6 +491,11 @@
         opacity: 1;
         transform: none;
       }
+      .flow-row {
+        display: grid;
+        grid-template-columns: 1fr 72px 1fr 72px 1fr 72px 1fr;
+        align-items: stretch;
+      }
 
       @media (max-width: 900px) {
         header,
@@ -519,9 +524,6 @@
         .dual-shots {
           grid-template-columns: 1fr 1fr;
         }
-        .philosophy-grid {
-          grid-template-columns: 1fr 1fr;
-        }
         nav {
           padding: 0 20px;
         }
@@ -541,12 +543,6 @@
         display: flex;
         flex-direction: column;
         gap: 0;
-      }
-
-      .flow-row {
-        display: grid;
-        grid-template-columns: 1fr 72px 1fr 72px 1fr 72px 1fr;
-        align-items: stretch;
       }
 
       .flow-node {
@@ -608,22 +604,22 @@
         line-height: 1.65;
       }
 
+      .flow-row {
+        grid-template-columns: 1fr;
+      }
+
       .flow-arrow {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
+        padding: 12px 0;
+        min-height: 48px;
       }
 
       .flow-arrow::before {
-        content: "";
-        position: absolute;
         top: 50%;
-        left: 0;
-        right: 0;
-        height: 1px;
-        background: var(--rule);
-        transform: translateY(-50%);
+        left: 50%;
+        right: auto;
+        width: 1px;
+        height: 100%;
+        transform: translate(-50%, -50%);
       }
 
       .flow-arrow .arrow-head {
@@ -850,7 +846,7 @@
               />
             </div>
             <p class="screenshot-caption">
-              Crop productivity dashboard . Alwar, Rajasthan · Kharif 2022
+              Crop productivity dashboard . Alwar, Rajasthan
             </p>
           </div>
         </div>
@@ -966,9 +962,9 @@
               commodity supply/demand intelligence dashboard
             </p>
             <p>
-              Each product serves a audience of actuaries, commodity traders who
-              configure complex financial parameters and need to see how inputs
-              affect risk and pricing instantly.
+              Each product serves an audience of actuaries, commodity traders
+              who configure complex financial parameters and need to see how
+              inputs affect risk and pricing instantly.
             </p>
             <div class="project-tags">
               <span class="tag">FinTech / InsurTech</span>
@@ -1118,7 +1114,7 @@
             <div class="node-icon">⬡</div>
             <h4>Design Systems, Not Screens</h4>
             <p>
-              Every components is reusable, predictable, and scalable across the
+              Every component is reusable, predictable, and scalable across the
               entire product.
             </p>
           </div>
@@ -1170,8 +1166,8 @@
             <div class="node-icon">→</div>
             <h4>Ship Without Compromise</h4>
             <p>
-              I have owned design and code end-to-end, so what ships looks and
-              works exactly as intended.
+              I own design and code end-to-end, so what ships looks and works
+              exactly as intended.
             </p>
           </div>
         </div>
