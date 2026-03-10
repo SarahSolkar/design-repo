@@ -412,38 +412,6 @@
         gap: 12px;
       }
 
-      /* PHILOSOPHY */
-      .philosophy-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1px;
-        background: var(--rule);
-        border: 1px solid var(--rule);
-      }
-
-      .philosophy-cell {
-        background: var(--card-bg);
-        padding: 36px 28px;
-      }
-
-      .philosophy-cell .icon {
-        font-size: 28px;
-        margin-bottom: 16px;
-        display: block;
-      }
-
-      .philosophy-cell h4 {
-        font-family: "DM Serif Display", serif;
-        font-size: 18px;
-        margin-bottom: 10px;
-      }
-
-      .philosophy-cell p {
-        font-size: 13px;
-        color: var(--muted);
-        line-height: 1.65;
-      }
-
       /* CTA */
       .cta-section {
         padding: 100px 60px;
@@ -722,7 +690,7 @@
         <p class="tagline" style="color: #000000">
           Hi, I am Sarah Ashraf Solkar, a Full Stack Developer with a
           design-first mindset. Built data-heavy interfaces for agriculture and
-          financial markets across India, Africa
+          financial markets across India and Africa
         </p>
       </div>
       <div class="header-meta fade-up">
@@ -831,7 +799,7 @@
             <p>
               A full-stack geospatial intelligence platform enabling agronomists
               and field teams to monitor crop programs at district scale across
-              Rajasthan. I owned end-to-end UX from initial concept through
+              Rajasthan. I own end-to-end UX from initial concept through
               production.
             </p>
             <p>
@@ -938,7 +906,7 @@
               <span class="tag">React</span>
               <span class="tag">Highcharts.js</span>
               <span class="tag">Soil Health Data</span>
-              <span class="tag">Google Earth ENgine</span>
+              <span class="tag">Google Earth Engine</span>
               <span class="tag">Data Cards</span>
             </div>
             <ul class="impact-list">
@@ -1010,13 +978,14 @@
             </div>
             <ul class="impact-list">
               <li>
-                [1] Spot vs Futures heatmap lets traders identify optimal hold
+                Spot vs Futures heatmap lets traders identify optimal hold
                 windows at a glance, with rainfall context as weather icons
+                <sup>[1]</sup>
               </li>
               <li>
-                [2] Livestock insurance tool: premium rate updates live as
-                actuaries adjust trigger level, exit level, and max payout
-                immediate feedback loop
+                Livestock insurance tool: premium rate updates live as actuaries
+                adjust trigger level, exit level, and max payout immediate
+                feedback loop <sup>[2]</sup>
               </li>
             </ul>
           </div>
@@ -1029,7 +998,7 @@
                 loading="lazy"
               />
             </div>
-            <br />
+            <p class="screenshot-caption">[1] Cotton supply/demand</p>
             <div class="screenshot-frame">
               <div class="bar"><span></span><span></span><span></span></div>
               <img
@@ -1039,7 +1008,7 @@
               />
             </div>
             <p class="screenshot-caption">
-              [1] Cotton supply/demand [2] ILRI livestock insurance (Tanzania)
+              [2] ILRI livestock insurance (Tanzania)
             </p>
           </div>
         </div>
@@ -1054,7 +1023,7 @@
               A clean, commodity overview designed to support the farmer
               producer organizations by helping them fight crop price volatility
               by giving them a better price for their produce so that they are
-              ready for ready for the next sowing seasons.
+              ready for the next sowing seasons.
             </p>
             <div class="project-tags">
               <span class="tag">React</span>
@@ -1067,21 +1036,21 @@
             <ul class="impact-list">
               <li>
                 Price trend analysis chart with zoom/drag interaction showing
-                commodity prices from 2013–2019 [1]
+                commodity prices from 2013–2019 <sup>[1]</sup>
               </li>
               <li>
                 Average prices table broken into Sowing, Arrival, and
-                Post-Arrival phases across 9 years with % change [1]
+                Post-Arrival phases across 9 years with % change <sup>[1]</sup>
               </li>
               <li>
                 Dual bottom panels: 9-year average price vs. arrivals (combo
                 bar+line chart) and monthly average prices for last 5 years
-                (multi-line) [1]
+                (multi-line)<sup>[1]</sup>
               </li>
-              <li>One-click table download functionality [1]</li>
+              <li>One-click table download functionality<sup>[1]</sup></li>
               <li>
                 Split Column chart to show the 2 cropping seasons (Rabi, Kharif)
-                with a card layout [2]
+                with a card layout<sup>[2]</sup>
               </li>
             </ul>
           </div>
@@ -1094,7 +1063,7 @@
                 loading="lazy"
               />
             </div>
-            <br />
+            <p class="screenshot-caption">[1] Commodity Price Analysis</p>
             <div class="screenshot-frame">
               <div class="bar"><span></span><span></span><span></span></div>
               <img
@@ -1103,9 +1072,7 @@
                 loading="lazy"
               />
             </div>
-            <p class="screenshot-caption">
-              [1] Commodity Price Analysis [2] Policy Management
-            </p>
+            <p class="screenshot-caption">[2] Policy Management</p>
           </div>
         </div>
       </div>
