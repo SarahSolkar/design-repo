@@ -52,7 +52,6 @@
         opacity: 0.4;
       }
 
-      /* HEADER */
       header {
         padding: 72px 60px 60px;
         border-bottom: 1px solid var(--rule);
@@ -132,7 +131,6 @@
         margin-top: 4px;
       }
 
-      /* NAV */
       nav {
         position: sticky;
         top: 0;
@@ -168,7 +166,6 @@
         border-color: var(--accent);
       }
 
-      /* SECTIONS */
       section {
         max-width: 1200px;
         margin: 0 auto;
@@ -203,7 +200,6 @@
         background: var(--rule);
       }
 
-      /* SKILLS */
       .skills-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -239,7 +235,6 @@
         color: var(--ink);
       }
 
-      /* PROJECT CARDS */
       .projects-list {
         display: flex;
         flex-direction: column;
@@ -256,9 +251,11 @@
       .project-item.reverse {
         grid-template-columns: 1.6fr 1fr;
       }
+
       .project-item.reverse .project-info {
         order: 2;
       }
+
       .project-item.reverse .project-visual {
         order: 1;
       }
@@ -337,7 +334,6 @@
         flex-shrink: 0;
       }
 
-      /* SCREENSHOTS */
       .project-visual {
         display: flex;
         flex-direction: column;
@@ -412,7 +408,6 @@
         gap: 12px;
       }
 
-      /* CTA */
       .cta-section {
         padding: 100px 60px;
         max-width: 1200px;
@@ -461,7 +456,6 @@
         background: var(--accent);
       }
 
-      /* FOOTER */
       footer {
         border-top: 1px solid var(--rule);
         padding: 32px 60px;
@@ -479,7 +473,6 @@
         letter-spacing: 0.1em;
       }
 
-      /* ANIMATIONS */
       .fade-up {
         opacity: 0;
         transform: translateY(24px);
@@ -487,62 +480,25 @@
           opacity 0.6s ease,
           transform 0.6s ease;
       }
+
       .fade-up.visible {
         opacity: 1;
         transform: none;
       }
-      .flow-row {
-        display: grid;
-        grid-template-columns: 1fr 72px 1fr 72px 1fr 72px 1fr;
-        align-items: stretch;
-      }
 
-      @media (max-width: 900px) {
-        header,
-        section,
-        .cta-section {
-          padding: 48px 28px;
-        }
-        header {
-          grid-template-columns: 1fr;
-        }
-        .header-meta {
-          text-align: left;
-        }
-        .header-meta .stat-grid {
-          justify-content: flex-start;
-        }
-        .project-item,
-        .project-item.reverse {
-          grid-template-columns: 1fr;
-        }
-        .project-item.reverse .project-info,
-        .project-item.reverse .project-visual {
-          order: unset;
-        }
-        .skills-grid,
-        .dual-shots {
-          grid-template-columns: 1fr 1fr;
-        }
-        nav {
-          padding: 0 20px;
-        }
-        nav ul li a {
-          padding: 14px 12px;
-        }
-        footer {
-          padding: 28px;
-          flex-direction: column;
-          gap: 12px;
-        }
-        .cta-section {
-          grid-template-columns: 1fr;
-        }
-      }
+      /* ============================================
+   PHILOSOPHY FLOW — DESKTOP (horizontal)
+   ============================================ */
       .philosophy-flow {
         display: flex;
         flex-direction: column;
         gap: 0;
+      }
+
+      .flow-row {
+        display: grid;
+        grid-template-columns: 1fr 72px 1fr 72px 1fr 72px 1fr;
+        align-items: stretch;
       }
 
       .flow-node {
@@ -604,23 +560,22 @@
         line-height: 1.65;
       }
 
-      .flow-row {
-        grid-template-columns: 1fr;
-      }
       .flow-arrow {
-        padding: 12px 0;
-        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
       }
+
       .flow-arrow::before {
+        content: "";
+        position: absolute;
         top: 50%;
-        left: 50%;
-        right: auto;
-        width: 1px;
-        height: 100%;
-        transform: translate(-50%, -50%);
-      }
-      .flow-arrow svg {
-        transform: rotate(90deg);
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--rule);
+        transform: translateY(-50%);
       }
 
       .flow-arrow .arrow-head {
@@ -642,6 +597,11 @@
         color: var(--muted);
         white-space: nowrap;
         text-align: center;
+      }
+
+      .flow-arrow svg {
+        color: var(--accent);
+        flex-shrink: 0;
       }
 
       .flow-footer {
@@ -670,6 +630,73 @@
         font-size: 14px;
         color: #4a4840;
         line-height: 1.65;
+      }
+
+      /* ============================================
+   RESPONSIVE — MOBILE
+   ============================================ */
+      @media (max-width: 900px) {
+        header,
+        section,
+        .cta-section {
+          padding: 48px 28px;
+        }
+        header {
+          grid-template-columns: 1fr;
+        }
+        .header-meta {
+          text-align: left;
+        }
+        .header-meta .stat-grid {
+          justify-content: flex-start;
+        }
+        .project-item,
+        .project-item.reverse {
+          grid-template-columns: 1fr;
+        }
+        .project-item.reverse .project-info,
+        .project-item.reverse .project-visual {
+          order: unset;
+        }
+        .skills-grid,
+        .dual-shots {
+          grid-template-columns: 1fr 1fr;
+        }
+        nav {
+          padding: 0 20px;
+        }
+        nav ul li a {
+          padding: 14px 12px;
+        }
+        footer {
+          padding: 28px;
+          flex-direction: column;
+          gap: 12px;
+        }
+        .cta-section {
+          grid-template-columns: 1fr;
+        }
+
+        /* Philosophy flow — vertical on mobile */
+        .flow-row {
+          grid-template-columns: 1fr;
+        }
+        .flow-arrow {
+          padding: 12px 0;
+          min-height: 48px;
+        }
+        .flow-arrow::before {
+          top: 0;
+          bottom: 0;
+          left: 50%;
+          right: auto;
+          width: 1px;
+          height: 100%;
+          transform: translateX(-50%);
+        }
+        .flow-arrow svg {
+          transform: rotate(90deg);
+        }
       }
     </style>
   </head>
@@ -849,6 +876,17 @@
 
         <!-- PROJECT 2 -->
         <div class="project-item fade-up">
+          <div class="project-visual">
+            <div class="screenshot-frame">
+              <div class="bar"><span></span><span></span><span></span></div>
+              <img
+                src="./images/image_9.webp"
+                alt="Farmer Impact Dashboard"
+                loading="lazy"
+              />
+            </div>
+            <p class="screenshot-caption">Farmer overview</p>
+          </div>
           <div class="project-info">
             <div class="proj-num">Project 02 / 05</div>
             <h3>Farmer Impact Score</h3>
@@ -865,19 +903,6 @@
               Key design constraint: agents use this on tablets in
               low-connectivity rural areas. I prioritized the impact score, farm
               risk, and yield gap
-            </p>
-          </div>
-          <div class="project-visual">
-            <div class="screenshot-frame">
-              <div class="bar"><span></span><span></span><span></span></div>
-              <img
-                src="./images/image_9.webp"
-                alt="Farmer Impact Dashboard"
-                loading="lazy"
-              />
-            </div>
-            <p class="screenshot-caption">
-              Farmer overview + remote sensing vegetation history · Maharashtra
             </p>
           </div>
         </div>
