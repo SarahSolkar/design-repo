@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — AgriTech Product & Design Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Sora:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --ink: #0d0d0d;
+        --paper: #f5f2eb;
+        --accent: #2d5a27;
+        --accent2: #c8502a;
+        --muted: #8a8678;
+        --rule: #d9d5cc;
+        --card-bg: #ffffff;
+        --tag-bg: #e8e4db;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Sora", sans-serif;
+        background: var(--paper);
+        color: var(--ink);
+        font-size: 15px;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0.4;
+      }
+
+      /* HEADER */
+      header {
+        padding: 72px 60px 60px;
+        border-bottom: 1px solid var(--rule);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: end;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .name-block .eyebrow {
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 12px;
+      }
+
+      .name-block h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: clamp(42px, 6vw, 50px);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+      }
+
+      .name-block h1 em {
+        font-style: italic;
+        color: var(--accent2);
+      }
+
+      .name-block .tagline {
+        margin-top: 18px;
+        font-size: 16px;
+        color: var(--muted);
+        max-width: 520px;
+        font-weight: 300;
+      }
+
+      .header-meta {
+        text-align: right;
+      }
+
+      .header-meta .role-tag {
+        display: inline-block;
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        background: var(--ink);
+        color: var(--paper);
+        padding: 8px 14px;
+        margin-bottom: 16px;
+      }
+
+      .header-meta .stat-grid {
+        display: flex;
+        gap: 32px;
+        justify-content: flex-end;
+      }
+
+      .stat-item .num {
+        font-family: "DM Serif Display", serif;
+        font-size: 32px;
+        color: var(--ink);
+        line-height: 1;
+      }
+
+      .stat-item .label {
+        font-family: "DM Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+
+      /* NAV */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(245, 242, 235, 0.92);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--rule);
+        padding: 0 60px;
+      }
+
+      nav ul {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 16px 20px;
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--muted);
+        transition: color 0.2s;
+        border-bottom: 2px solid transparent;
+      }
+
+      nav ul li a:hover {
+        color: var(--ink);
+        border-color: var(--accent);
+      }
+
+      /* SECTIONS */
+      section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 80px 60px;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .section-header {
+        display: flex;
+        align-items: baseline;
+        gap: 20px;
+        margin-bottom: 56px;
+      }
+
+      .section-header .section-num {
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        color: var(--muted);
+        letter-spacing: 0.15em;
+      }
+
+      .section-header h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: 36px;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+      }
+
+      .section-header .section-line {
+        flex: 1;
+        height: 1px;
+        background: var(--rule);
+      }
+
+      /* SKILLS */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+      }
+
+      .skill-cell {
+        background: var(--card-bg);
+        padding: 28px 24px;
+      }
+
+      .skill-cell .skill-area {
+        font-family: "DM Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 10px;
+      }
+
+      .skill-cell .skill-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .skill-cell .skill-items span {
+        font-size: 13px;
+        background: var(--tag-bg);
+        padding: 4px 10px;
+        color: var(--ink);
+      }
+
+      /* PROJECT CARDS */
+      .projects-list {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+      }
+
+      .project-item {
+        display: grid;
+        grid-template-columns: 1fr 1.6fr;
+        gap: 60px;
+        align-items: start;
+      }
+
+      .project-item.reverse {
+        grid-template-columns: 1.6fr 1fr;
+      }
+      .project-item.reverse .project-info {
+        order: 2;
+      }
+      .project-item.reverse .project-visual {
+        order: 1;
+      }
+
+      .project-info .proj-num {
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        color: var(--muted);
+        letter-spacing: 0.15em;
+        margin-bottom: 12px;
+      }
+
+      .project-info h3 {
+        font-family: "DM Serif Display", serif;
+        font-size: 28px;
+        letter-spacing: -0.01em;
+        margin-bottom: 8px;
+        line-height: 1.2;
+      }
+
+      .project-info .proj-client {
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent2);
+        margin-bottom: 20px;
+      }
+
+      .project-info p {
+        color: #4a4840;
+        font-size: 14px;
+        line-height: 1.75;
+        margin-bottom: 16px;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 24px;
+      }
+
+      .project-tags .tag {
+        font-family: "DM Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 5px 10px;
+        background: var(--tag-bg);
+        color: var(--muted);
+      }
+
+      .impact-list {
+        list-style: none;
+        border-top: 1px solid var(--rule);
+        padding-top: 20px;
+      }
+
+      .impact-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 13px;
+        color: #4a4840;
+        padding: 8px 0;
+        border-bottom: 1px solid var(--rule);
+        line-height: 1.5;
+      }
+
+      .impact-list li::before {
+        content: "↗";
+        color: var(--accent);
+        font-size: 12px;
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+
+      /* SCREENSHOTS */
+      .project-visual {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .screenshot-frame {
+        position: relative;
+        border: 1px solid var(--rule);
+        overflow: hidden;
+        background: #fff;
+        box-shadow:
+          0 4px 24px rgba(0, 0, 0, 0.06),
+          0 1px 4px rgba(0, 0, 0, 0.04);
+        transition:
+          box-shadow 0.3s,
+          transform 0.3s;
+      }
+
+      .screenshot-frame:hover {
+        box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
+        transform: translateY(-2px);
+      }
+
+      .screenshot-frame .bar {
+        height: 28px;
+        background: #f0ede6;
+        border-bottom: 1px solid var(--rule);
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+        gap: 6px;
+      }
+
+      .screenshot-frame .bar span {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--rule);
+      }
+
+      .screenshot-frame .bar span:nth-child(1) {
+        background: #ff6b6b;
+      }
+      .screenshot-frame .bar span:nth-child(2) {
+        background: #ffd166;
+      }
+      .screenshot-frame .bar span:nth-child(3) {
+        background: #6bcb77;
+      }
+
+      .screenshot-frame img {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      .screenshot-caption {
+        font-family: "DM Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        text-align: center;
+        text-transform: uppercase;
+        padding: 8px 0;
+      }
+
+      .dual-shots {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      /* PHILOSOPHY */
+      .philosophy-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--rule);
+        border: 1px solid var(--rule);
+      }
+
+      .philosophy-cell {
+        background: var(--card-bg);
+        padding: 36px 28px;
+      }
+
+      .philosophy-cell .icon {
+        font-size: 28px;
+        margin-bottom: 16px;
+        display: block;
+      }
+
+      .philosophy-cell h4 {
+        font-family: "DM Serif Display", serif;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      .philosophy-cell p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      /* CTA */
+      .cta-section {
+        padding: 100px 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 60px;
+      }
+
+      .cta-section h2 {
+        font-family: "DM Serif Display", serif;
+        font-size: clamp(32px, 4vw, 52px);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+
+      .cta-section h2 em {
+        font-style: italic;
+        color: var(--accent2);
+      }
+
+      .cta-section p {
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 15px;
+        max-width: 520px;
+        line-height: 1.7;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        background: var(--ink);
+        color: var(--paper);
+        padding: 18px 36px;
+        font-family: "DM Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: background 0.2s;
+        white-space: nowrap;
+      }
+
+      .cta-btn:hover {
+        background: var(--accent);
+      }
+
+      /* FOOTER */
+      footer {
+        border-top: 1px solid var(--rule);
+        padding: 32px 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      footer .foot-mono {
+        font-family: "DM Mono", monospace;
+        font-size: 11px;
+        color: var(--muted);
+        letter-spacing: 0.1em;
+      }
+
+      /* ANIMATIONS */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .fade-up.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      @media (max-width: 900px) {
+        header,
+        section,
+        .cta-section {
+          padding: 48px 28px;
+        }
+        header {
+          grid-template-columns: 1fr;
+        }
+        .header-meta {
+          text-align: left;
+        }
+        .header-meta .stat-grid {
+          justify-content: flex-start;
+        }
+        .project-item,
+        .project-item.reverse {
+          grid-template-columns: 1fr;
+        }
+        .project-item.reverse .project-info,
+        .project-item.reverse .project-visual {
+          order: unset;
+        }
+        .skills-grid,
+        .dual-shots {
+          grid-template-columns: 1fr 1fr;
+        }
+        .philosophy-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        nav {
+          padding: 0 20px;
+        }
+        nav ul li a {
+          padding: 14px 12px;
+        }
+        footer {
+          padding: 28px;
+          flex-direction: column;
+          gap: 12px;
+        }
+        .cta-section {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="name-block fade-up">
+        <p class="eyebrow">Product · Design · Engineering</p>
+        <h1>Turning <em>complex data</em><br />into clarity.</h1>
+        <p class="tagline">
+          Full-stack engineer with a design-first mindset. Built data-heavy,
+          interfaces for agriculture and financial markets across India, Africa
+        </p>
+      </div>
+      <div class="header-meta fade-up">
+        <span class="role-tag">Available · Product Engineering</span>
+        <div class="stat-grid">
+          <div class="stat-item">
+            <div class="num">3+</div>
+            <div class="label">Years</div>
+          </div>
+          <div class="stat-item">
+            <div class="num">7+</div>
+            <div class="label">Products</div>
+          </div>
+          <div class="stat-item">
+            <div class="num">4</div>
+            <div class="label">Countries</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAV -->
+    <nav>
+      <ul>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#philosophy">Design Thinking</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-header fade-up">
+        <span class="section-num">00</span>
+        <h2>Capabilities</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-grid fade-up">
+        <div class="skill-cell">
+          <div class="skill-area">Frontend Engineering</div>
+          <div class="skill-items">
+            <span>React</span><span>Next.js</span><span>TypeScript</span>
+            <span>Tailwind</span><span>Material UI</span><span>Highcharts</span>
+          </div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-area">Data Visualization</div>
+          <div class="skill-items">
+            <span>Google Earth Engine / OpenLayers</span
+            ><span>Time-Series</span> <span>Remote Sensing</span>
+          </div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-area">Design</div>
+          <div class="skill-items">
+            <span>Figma</span><span>Design Systems</span
+            ><span>UX Research</span> <span>Prototyping</span
+            ><span>Accessibility</span>
+          </div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-area">AI & Data Products</div>
+          <div class="skill-items">
+            <span>Satellite Imagery</span>
+            <span>Predictive Analytics</span><span>Risk Models</span>
+          </div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-area">Backend & Infra</div>
+          <div class="skill-items">
+            <span>Node.js</span><span>Python</span><span>REST APIs</span>
+            <span>MongoDB</span><span>Flask</span><span>AWS</span>
+          </div>
+        </div>
+        <div class="skill-cell">
+          <div class="skill-area">Domain Expertise</div>
+          <div class="skill-items">
+            <span>AgriTech</span><span>InsurTech</span>
+            <span>Commodity Markets</span><span>Rural Finance</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work">
+      <div class="section-header fade-up">
+        <span class="section-num">01</span>
+        <h2>Selected Work</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="projects-list">
+        <!-- PROJECT 1 -->
+        <div class="project-item fade-up">
+          <div class="project-info">
+            <div class="proj-num">Project 01 / 05</div>
+            <h3>Monitor, Record & Verify Platform</h3>
+            <div class="proj-client">Syngenta Foundation × Agtuall</div>
+            <p>
+              A full-stack geospatial intelligence platform enabling agronomists
+              and field teams to monitor crop programs at district scale across
+              Rajasthan. I owned end-to-end UX from initial concept through
+              production.
+            </p>
+            <p>
+              The core challenge: translating 6000+ farmers across 3 districts
+              into a single coherent spatial interface without overwhelming
+              non-technical extension workers.
+            </p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">Google Earth Engine</span>
+              <span class="tag">Highcharts</span>
+              <span class="tag">Time-Series UX</span>
+              <span class="tag">Flask</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">AWS</span>
+            </div>
+            <ul class="impact-list">
+              <li>
+                Collapsible vertical tab navigation (like reading a book)
+                reduces cognitive load while preserving full analytical depth
+              </li>
+              <li>
+                NDVI choropleth (Low→High color ramp, 0–15+ Qtls/Acre) pairs
+                with the trend line spatial and temporal insight on one screen
+              </li>
+              <li>
+                Interactive and zoomable 18-month time-series supports
+                cross-season phenological analysis with click-and-drag
+                interaction
+              </li>
+              <li>Hovered region tooltip updates in real-time</li>
+            </ul>
+          </div>
+          <div class="project-visual">
+            <div class="screenshot-frame">
+              <div class="bar"><span></span><span></span><span></span></div>
+              <img
+                src="./images/image_2.webp"
+                alt="Crop Yield Analytics"
+                loading="lazy"
+              />
+            </div>
+            <div class="screenshot-frame">
+              <div class="bar"><span></span><span></span><span></span></div>
+              <img
+                src="./images/image_3.webp"
+                alt="NDVI Vegetation Health Trend"
+                loading="lazy"
+              />
+            </div>
+            <p class="screenshot-caption">
+              Crop productivity dashboard — Alwar, Rajasthan · Kharif 2022
+            </p>
+          </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-item fade-up">
+          <div class="project-info">
+            <div class="proj-num">Project 02 / 05</div>
+            <h3>Farmer Impact Score</h3>
+            <div class="proj-client">
+              AEG × Syngenta Foundation · Maharashtra
+            </div>
+            <p>
+              A farmer-level profile card combining satellite remote sensing,
+              agronomic inputs and financial indicators into a single-screen
+              decision tool for Agricultural Extension (AE) workers in the
+              field.
+            </p>
+            <p>
+              Key design constraint: agents use this on tablets in
+              low-connectivity rural areas. I prioritized the impact score, farm
+              risk, and yield gap
+            </p>
+
+            <ul class="impact-list">
+              <li>
+                Gauge-based Impact Score (55/100) gives field workers an
+                immediate readout
+              </li>
+              <li>
+                One-tap PDF report generation for sharing farmer recommendations
+                on the spot
+              </li>
+            </ul>
+          </div>
+          <div class="project-visual">
+            <div class="screenshot-frame">
+              <div class="bar"><span></span><span></span><span></span></div>
+              <img
+                src="./images/image_9.webp"
+                alt="Farmer Impact Dashboard"
+                loading="lazy"
+              />
+            </div>
+            <p class="screenshot-caption">
+              Farmer overview + remote sensing vegetation history · Maharashtra
+            </p>
+          </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="project-item reverse fade-up">
+          <div class="project-info">
+            <div class="proj-num">Project 03 / 05</div>
+            <h3>Remote Sensing Dashboard</h3>
+            <div class="proj-client">
+              AEG × Syngenta Foundation · Wada, Maharashtra
+            </div>
+            <p>
+              A clean, data-rich district-level overview designed for program
+              managers who need to understand the agronomic and demographic
+              context of a new geography quickly built to support onboarding of
+              new districts and crop programs.
+            </p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">Highcharts.js</span>
+              <span class="tag">Soil Health Data</span>
+              <span class="tag">Google Earth ENgine</span>
+              <span class="tag">Data Cards</span>
+            </div>
+            <ul class="impact-list">
+              <li>
+                Geographic outline + cards below unifies spatial and statistical
+                context — 78,733 Ha area, 32,753 Ha cultivable, Tansa + Vaitarna
+                dams, all visible at once
+              </li>
+              <li>
+                Soil Health Insights (Black Soil, Clay/Sandy Clay Loam) surface
+                data critical for fertilizer and crop recommendation workflows
+              </li>
+              <li>
+                Download + Share affordances integrated into the header — fits
+                program managers' weekly reporting cadence without extra steps
+              </li>
+              <li>
+                "Average Yield" tab provides a second analytical lens without
+                disrupting the spatial overview as default state
+              </li>
+            </ul>
+          </div>
+          <div class="project-visual">
+            <div class="screenshot-frame">
+              <div class="bar"><span></span><span></span><span></span></div>
+              <img
+                src="./images/image_10.webp"
+                alt="Remote Sensing Vegetation History"
+                loading="lazy"
+              />
+            </div>
+            <div class="screenshot-frame">
+              <div class="bar"><span></span><span></span><span></span></div>
+              <img
+                src="./images/image_8.webp"
+                alt="District Intelligence Overview — Wada"
+                loading="lazy"
+              />
+            </div>
+            <p class="screenshot-caption">
+              District overview — Wada, Maharashtra · AEG × Syngenta platform
+            </p>
+          </div>
+        </div>
+
+        <!-- PROJECT 4 -->
+        <div class="project-item fade-up">
+          <div class="project-info">
+            <div class="proj-num">Project 04 / 05</div>
+            <h3>Index Insurance & Commodity Dashboard</h3>
+            <div class="proj-client">
+              ILRI × Syngenta Foundation x Agtuall · Tanzania . India
+            </div>
+            <p>
+              Two distinct product lines designed from the ground up: an
+              Index-Based Livestock Insurance pricing tool for East Africa, a
+              commodity supply/demand intelligence dashboard
+            </p>
+            <p>
+              Each product serves a technically sophisticated audience
+              actuaries, commodity traders, FPO managers who configure complex
+              financial parameters and need to see how inputs affect risk and
+              pricing instantly. Make financial complexity legible without
+              stripping out precision.
+            </p>
+            <div class="project-tags">
+              <span class="tag">FinTech / InsurTech</span>
+              <span class="tag">Index Insurance</span>
+              <span class="tag">Commodity Analytics</span>
+              <span class="tag">Parameter UX</span>
+            </div>
+            <ul class="impact-list">
+              <li>
+                Livestock insurance tool: premium rate updates live as actuaries
+                adjust trigger level, exit level, and max payout immediate
+                feedback loop
+              </li>
+
+              <li>
+                Supply/demand factor cards use directional arrows + color coding
+                to encode market signals — no numbers overload for non-expert
+                commodity managers
+              </li>
+              <li>
+                Storage Attractiveness heatmap (green/red % over harvest month
+                price, 2013–2022) lets traders identify optimal hold windows at
+                a glance, with rainfall context as weather icons
+              </li>
+            </ul>
+          </div>
+          <div class="project-visual">
+            <div class="screenshot-frame">
+              <div class="bar"><span></span><span></span><span></span></div>
+              <img
+                src="./images/image_4.webp"
+                alt="Commodity Supply Demand Factors"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="screenshot-frame">
+              <div class="bar"><span></span><span></span><span></span></div>
+              <img
+                src="./images/image_5.webp"
+                alt="ILRI Livestock Insurance Pricing Tool"
+                loading="lazy"
+              />
+            </div>
+            <div class="screenshot-frame">
+              <div class="bar"><span></span><span></span><span></span></div>
+              <img
+                src="./images/image_11.png"
+                alt="Storage Attractiveness Heatmap"
+                loading="lazy"
+              />
+            </div>
+            <p class="screenshot-caption">
+              ILRI livestock insurance (Tanzania) · Cotton supply/demand · Price
+              risk dashboard · Storage attractiveness
+            </p>
+          </div>
+        </div>
+
+        <!-- PROJECT 5 -->
+        <div class="project-item reverse fade-up">
+          <div class="project-info">
+            <div class="proj-num">Project 05 / 05</div>
+            <h3>Farmer Income Support Tool</h3>
+            <div class="proj-client">Arya × Agtuall · India</div>
+            <p>
+              A clean, commodity overview designed to support the farmer
+              producer organizations by helping them fight crop price volatility
+              by giving them a better price for their produce so that they are
+              ready for ready for the next sowing seasons.
+            </p>
+            <div class="project-tags">
+              <span class="tag">React</span>
+              <span class="tag">Highcharts.js</span>
+              <span class="tag">Price Risk Management</span>
+              <span class="tag">Flask</span>
+              <span class="tag">AWS</span>
+              <span class="tag">InsurTech </span>
+            </div>
+            <ul class="impact-list">
+              <li>
+                Price trend analysis chart with zoom/drag interaction showing
+                commodity prices from 2013–2019
+              </li>
+              <li>
+                Average prices table broken into Sowing, Arrival, and
+                Post-Arrival phases across 9 years with % change rows
+              </li>
+              <li>
+                Dual bottom panels: 9-year average price vs. arrivals (combo
+                bar+line chart) and monthly average prices for last 5 years
+                (multi-line)
+              </li>
+              <li>
+                Tabbed navigation between Historical Price Analysis and
+                Crop-Market Eligibility
+              </li>
+              <li>One-click table download functionality</li>
+            </ul>
+          </div>
+          <div class="project-visual">
+            <div class="screenshot-frame">
+              <div class="bar"><span></span><span></span><span></span></div>
+              <img
+                src="./images/image_6.webp"
+                alt="Price Risk Management Dashboard"
+                loading="lazy"
+              />
+            </div>
+            <div class="screenshot-frame">
+              <div class="bar"><span></span><span></span><span></span></div>
+              <img
+                src="./images/image_7.webp"
+                alt="Price Risk Management Dashboard"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESIGN PHILOSOPHY -->
+    <section id="philosophy">
+      <div class="section-header fade-up">
+        <span class="section-num">02</span>
+        <h2>How I Think About Design</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="philosophy-grid fade-up">
+        <div class="philosophy-cell">
+          <span class="icon">⬡</span>
+          <h4>Systems over Screens</h4>
+          <p>
+            I design components, not pages. Every metric card, map panel, and
+            chart type is reusable, predictable and scalable across features.
+          </p>
+        </div>
+        <div class="philosophy-cell">
+          <span class="icon">◎</span>
+          <h4>Complexity, Clarified</h4>
+          <p>
+            My work sits at the intersection of AI models, satellite data, and
+            financial risk domains that can overwhelm if not carefully
+            distilled.
+          </p>
+        </div>
+        <div class="philosophy-cell">
+          <span class="icon">→</span>
+          <h4>Design that Ships</h4>
+          <p>
+            I prototype in Figma and build in React. I own design and code,
+            which means fewer compromises between vision and implementation.
+          </p>
+        </div>
+        <div class="philosophy-cell">
+          <span class="icon">◌</span>
+          <h4>Context First</h4>
+          <p>
+            A field agent in Maharashtra reads charts differently than an
+            actuarial analyst in Nairobi. I design for the real user in the real
+            environment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-section fade-up" id="contact">
+      <div>
+        <h2>
+          Let's build <em>search &amp; discovery</em> experiences that feel
+          inevitable.
+        </h2>
+      </div>
+      <a class="cta-btn" href="mailto:ssolkar@gmu.edu">Get in touch →</a>
+    </div>
+
+    <footer>
+      <span class="foot-mono">Portfolio · 2025</span>
+      <span class="foot-mono">Product · Design · Engineering</span>
+    </footer>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => entry.target.classList.add("visible"), i * 80);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.08 },
+      );
+      document
+        .querySelectorAll(".fade-up")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
