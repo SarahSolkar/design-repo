@@ -569,6 +569,148 @@
           grid-template-columns: 1fr;
         }
       }
+      .philosophy-flow {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .flow-row {
+        display: grid;
+        grid-template-columns: 1fr 72px 1fr 72px 1fr 72px 1fr;
+        align-items: stretch;
+      }
+
+      .flow-node {
+        background: var(--card-bg);
+        border: 1px solid var(--rule);
+        padding: 36px 28px;
+        position: relative;
+        transition:
+          border-color 0.3s,
+          box-shadow 0.3s;
+      }
+
+      .flow-node:hover {
+        border-color: var(--accent);
+        box-shadow: 0 6px 28px rgba(45, 90, 39, 0.08);
+        z-index: 1;
+      }
+
+      .flow-node .node-num {
+        font-family: "DM Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        color: var(--muted);
+        margin-bottom: 16px;
+        display: block;
+      }
+
+      .flow-node .node-icon {
+        width: 40px;
+        height: 40px;
+        border: 1.5px solid var(--rule);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        margin-bottom: 16px;
+        background: var(--paper);
+        transition:
+          border-color 0.3s,
+          background 0.3s;
+      }
+
+      .flow-node:hover .node-icon {
+        border-color: var(--accent);
+        background: #edf4ec;
+      }
+
+      .flow-node h4 {
+        font-family: "DM Serif Display", serif;
+        font-size: 18px;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+
+      .flow-node p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .flow-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .flow-arrow::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--rule);
+        transform: translateY(-50%);
+      }
+
+      .flow-arrow .arrow-head {
+        position: relative;
+        z-index: 1;
+        background: var(--paper);
+        padding: 0 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .flow-arrow .arrow-label {
+        font-family: "DM Mono", monospace;
+        font-size: 9px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        white-space: nowrap;
+        text-align: center;
+      }
+
+      .flow-arrow svg {
+        color: var(--accent);
+        flex-shrink: 0;
+      }
+
+      .flow-footer {
+        margin-top: 40px;
+        padding: 24px 32px;
+        border: 1px solid var(--rule);
+        background: var(--card-bg);
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .flow-footer .footer-label {
+        font-family: "DM Mono", monospace;
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        white-space: nowrap;
+        padding-right: 28px;
+        border-right: 1px solid var(--rule);
+      }
+
+      .flow-footer .footer-text {
+        font-size: 14px;
+        color: #4a4840;
+        line-height: 1.65;
+      }
     </style>
   </head>
   <body>
@@ -577,17 +719,18 @@
       <div class="name-block fade-up">
         <p class="eyebrow">Product · Design · Engineering</p>
         <h1>Turning <em>complex data</em><br />into clarity.</h1>
-        <p class="tagline">
-          Full-stack engineer with a design-first mindset. Built data-heavy
-          interfaces for agriculture and financial markets across India, Africa
+        <p class="tagline" style="color: #000000">
+          Hi, I am Sarah Ashraf Solkar, a Full Stack Developer with a
+          design-first mindset. Built data-heavy interfaces for agriculture and
+          financial markets across India, Africa
         </p>
       </div>
       <div class="header-meta fade-up">
         <a href="./docs/Resume_of_Sarah_Solkar.pdf" target="_blank"
-          ><span class="role-tag">Download Resume</span></a
+          ><span class="role-tag">View Resume</span></a
         >
 
-        <span class="role-tag">Available · Product Engineering</span>
+        <span class="role-tag">Product Engineering</span>
         <div class="stat-grid">
           <div class="stat-item">
             <div class="num">3+</div>
@@ -975,37 +1118,102 @@
         <h2>How I Think About Design</h2>
         <div class="section-line"></div>
       </div>
-      <div class="philosophy-grid fade-up">
-        <div class="philosophy-cell">
-          <span class="icon">⬡</span>
-          <h4>Systems over Screens</h4>
-          <p>
-            I design components, not pages. Every component is reusable,
-            predictable and scalable across features.
-          </p>
+
+      <div class="philosophy-flow fade-up">
+        <div class="flow-row">
+          <div class="flow-node">
+            <span class="node-num">Step 01</span>
+            <div class="node-icon">◌</div>
+            <h4>Understand Context First</h4>
+            <p>
+              Every design starts with who's actually using it, where, and why.
+            </p>
+          </div>
+
+          <div class="flow-arrow">
+            <div class="arrow-head">
+              <span class="arrow-label">informs</span>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M4 10h12M12 5l5 5-5 5" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="flow-node">
+            <span class="node-num">Step 02</span>
+            <div class="node-icon">⬡</div>
+            <h4>Design Systems, Not Screens</h4>
+            <p>
+              Every components is reusable, predictable, and scalable across the
+              entire product.
+            </p>
+          </div>
+
+          <div class="flow-arrow">
+            <div class="arrow-head">
+              <span class="arrow-label">shapes</span>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M4 10h12M12 5l5 5-5 5" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="flow-node">
+            <span class="node-num">Step 03</span>
+            <div class="node-icon">◎</div>
+            <h4>Clarify System Complexity</h4>
+            <p>
+              Good UX hides the math and surfaces the one thing that drives the
+              decision.
+            </p>
+          </div>
+
+          <div class="flow-arrow">
+            <div class="arrow-head">
+              <span class="arrow-label">becomes</span>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M4 10h12M12 5l5 5-5 5" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="flow-node">
+            <span class="node-num">Step 04</span>
+            <div class="node-icon">→</div>
+            <h4>Ship Without Compromise</h4>
+            <p>
+              I have owned design and code end-to-end, so what ships looks and
+              works exactly as intended.
+            </p>
+          </div>
         </div>
-        <div class="philosophy-cell">
-          <span class="icon">◎</span>
-          <h4>Complexity, Clarified</h4>
-          <p>
-            My work sits at the intersection of AI models, satellite data, and
-            financial risk domains that doesn't overwhelm users.
-          </p>
-        </div>
-        <div class="philosophy-cell">
-          <span class="icon">→</span>
-          <h4>Design that Ships</h4>
-          <p>
-            I prototype in Figma and build in React. I have owned design and
-            code, which means fewer compromises.
-          </p>
-        </div>
-        <div class="philosophy-cell">
-          <span class="icon">◌</span>
-          <h4>Context First</h4>
-          <p>
-            A field agent in Maharashtra reads charts differently than an
-            actuarial analyst in Nairobi. I design for real users.
+
+        <div class="flow-footer">
+          <span class="footer-label">The result</span>
+          <p class="footer-text">
+            Interfaces that non-technical users adopt immediately, technical
+            stakeholders trust completely.
           </p>
         </div>
       </div>
