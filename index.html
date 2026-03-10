@@ -607,12 +607,10 @@
       .flow-row {
         grid-template-columns: 1fr;
       }
-
       .flow-arrow {
         padding: 12px 0;
         min-height: 48px;
       }
-
       .flow-arrow::before {
         top: 50%;
         left: 50%;
@@ -620,6 +618,9 @@
         width: 1px;
         height: 100%;
         transform: translate(-50%, -50%);
+      }
+      .flow-arrow svg {
+        transform: rotate(90deg);
       }
 
       .flow-arrow .arrow-head {
@@ -641,11 +642,6 @@
         color: var(--muted);
         white-space: nowrap;
         text-align: center;
-      }
-
-      .flow-arrow svg {
-        color: var(--accent);
-        flex-shrink: 0;
       }
 
       .flow-footer {
